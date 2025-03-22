@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gnosispay-monitor-pod
+spec:
+  containers:
+    - name: gnosispay-monitor-container
+      image: gnosispay-monitor
+      imagePullPolicy: Never
