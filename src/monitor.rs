@@ -33,6 +33,10 @@ pub async fn monitor(
     pushover_token: String,
 ) -> Result<()> {
     let pushover = PushOverNotify::new(pushover_user, pushover_token);
+    pushover
+        .notify("GnosisPay".into(), "Starting to monitor".into())
+        .await?;
+
     let wallet_address = Address::from_str(&wallet_address)?;
     let monerium_address = Address::from_str(monerium::GNOSIS_BANK)?;
 

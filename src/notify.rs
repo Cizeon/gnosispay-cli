@@ -3,16 +3,16 @@ use reqwest;
 
 pub struct PushOverNotify {
     url: String,
-    token: String,
     user: String,
+    token: String,
 }
 
 impl PushOverNotify {
-    pub fn new(token: String, user: String) -> Self {
+    pub fn new(user: String, token: String) -> Self {
         Self {
             url: String::from("https://api.pushover.net/1/messages.json"),
-            token,
             user,
+            token,
         }
     }
 
